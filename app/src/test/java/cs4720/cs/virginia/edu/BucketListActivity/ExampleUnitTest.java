@@ -1,4 +1,4 @@
-package cs4720.cs.viginia.edu.dewgong;
+package cs4720.cs.virginia.edu.BucketListActivity;
 
 import org.junit.Test;
 

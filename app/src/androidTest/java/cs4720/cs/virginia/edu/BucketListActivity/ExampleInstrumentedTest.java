@@ -1,4 +1,4 @@
-package cs4720.cs.viginia.edu.dewgong;
+package cs4720.cs.virginia.edu.BucketListActivity;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("cs4720.cs.viginia.edu.dewgong", appContext.getPackageName());
+        assertEquals("cs4720.cs.virginia.edu.testing", appContext.getPackageName());
     }
 }
