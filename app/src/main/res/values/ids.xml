@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="bucket_item" type="id">Bucket List Item</item>
+</resources>

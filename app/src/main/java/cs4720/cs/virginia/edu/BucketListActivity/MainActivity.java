@@ -8,8 +8,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private RecyclerView RecyclerView;
+    private LinearLayoutManager LinearLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +23,15 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        RecyclerView = (RecyclerView) findViewById(R.id.rvContacts);
+        LinearLayoutManager = new LinearLayoutManager(this);
+        RecyclerView.setLayoutManager(LinearLayoutManager);
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "This button doesn't do anything yet", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
