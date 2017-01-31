@@ -11,22 +11,41 @@ import android.view.MenuItem;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static android.R.attr.data;
+
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView RecyclerView;
+
     private LinearLayoutManager LinearLayoutManager;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //generate items from the activity-main xml
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        List<BucketItem> mdata = ThingList.getListData();
+
+        //access the RecyclerView from the main activity
         RecyclerView = (RecyclerView) findViewById(R.id.rvContacts);
+        BucketListAdapter mAdapter = new BucketListAdapter(mdata, this);
+        RecyclerView.setAdapter(mAdapter);
         LinearLayoutManager = new LinearLayoutManager(this);
         RecyclerView.setLayoutManager(LinearLayoutManager);
 
+
+
+        //THE PROBLEMTATIC LINE
+
+        //generate floating action button
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
