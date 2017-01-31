@@ -19,31 +19,8 @@ import static android.R.attr.data;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView RecyclerView;
-    private BucketListAdapter adapter;
+
     private LinearLayoutManager LinearLayoutManager;
-
-
-    //making the list~~~
-    public static String[] names = {"Streak the Lawn", "Lighting of the Lawn", "High-Five Dean Groves"};
-    public static String[] descs = {"Go run around the homesr statue and come back.", "Have a great time and see some lights",
-        "Just put your hand right on his hand!"};
-    public static double[] lats = {38.0889, 38.0881, 38.0887};
-    public static double[] longs = {-78.5596, -78.5593, -78.5591};
-
-    public static List<BucketItem> getListData(){
-        List<BucketItem> mdata = new ArrayList<>();
-
-        for(int i = 0; i < names.length; i++) {
-            BucketItem item = new BucketItem();
-            item.setName(names[i]);
-            item.setDescription(descs[i]);
-            item.setLongitude(longs[i]);
-            item.setLatitude(lats[i]);
-            mdata.add(item);
-        }
-        return mdata;
-    }
-    //end of list setup - probably should move that????
 
 
 
@@ -55,15 +32,18 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        List<BucketItem> mdata = getListData();
-        adapter = new BucketListAdapter(mdata, this);
-
-        RecyclerView.setAdapter(adapter);
+        List<BucketItem> mdata = ThingList.getListData();
 
         //access the RecyclerView from the main activity
         RecyclerView = (RecyclerView) findViewById(R.id.rvContacts);
+        BucketListAdapter mAdapter = new BucketListAdapter(mdata, this);
+        RecyclerView.setAdapter(mAdapter);
         LinearLayoutManager = new LinearLayoutManager(this);
         RecyclerView.setLayoutManager(LinearLayoutManager);
+
+
+
+        //THE PROBLEMTATIC LINE
 
         //generate floating action button
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);

@@ -26,19 +26,16 @@ public class BucketListAdapter extends RecyclerView.Adapter<BucketListAdapter.It
 
     @Override
     public ItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.bucket_item, parent, false);
+        View view = inflater.inflate(R.layout.recyclerview_item_row, parent, false);
         return new ItemHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ItemHolder holder, int position) {
         BucketItem item = listData.get(position);
+
         holder.name.setText(item.getName());
-        holder.desc.setText(item.getDescription());
-        String s = "" + item.getLatitude();
-        holder.lat.setText(s);
-        String t = "" + item.getLongitude();
-        holder.longi.setText(t);
+
 
     }
 
@@ -50,16 +47,13 @@ public class BucketListAdapter extends RecyclerView.Adapter<BucketListAdapter.It
     class ItemHolder extends RecyclerView.ViewHolder{
 
         private TextView name;
-        private TextView desc;
-        private TextView lat;
-        private TextView longi;
         private View container;
 
 
         public ItemHolder(View itemView) {
             super(itemView);
 
-            name = (TextView)itemView.findViewById(R.id.rvContacts);
+            name = (TextView)itemView.findViewById(R.id.item_data);
             container = itemView.findViewById(R.id.container_item_root);
         }
     }
