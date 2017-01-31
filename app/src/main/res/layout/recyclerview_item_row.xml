@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="56dp"
+    android:paddingLeft="16dp"
+    android:id="@+id/container_item_root">
+
+
 
 
     <TextView
-        android:id="@+id/item_date"
-        android:layout_width="451dp"
-        android:layout_height="0dp"
-        android:layout_gravity="top|start"
-        android:layout_weight="1"
+        android:id="@+id/item_data"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:paddingLeft="8dp"
         android:text="Words in textView in recylerView"/>
-
 
 
 </LinearLayout>
