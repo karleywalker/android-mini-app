@@ -62,7 +62,8 @@
         android:ems="10"
         android:id="@+id/personName"
         android:layout_above="@+id/rvContacts"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        />
 
 
 </RelativeLayout>

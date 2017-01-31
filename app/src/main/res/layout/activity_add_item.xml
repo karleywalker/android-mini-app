@@ -10,4 +10,71 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="cs4720.cs.virginia.edu.testing.AddItemActivity">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30px" />
+
+    <TextView
+        android:text="Name"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Type Name of Event"
+        android:textColor="@color/colorPrimaryDark"
+        android:ems="10"
+        />
+    <TextView
+        android:text="Description"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Type Description"
+        android:textColor="@color/colorPrimaryDark"
+        android:ems="10"
+        />
+    <TextView
+        android:text="Latitude"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Type Latitude"
+        android:textColor="@color/colorPrimaryDark"
+        android:ems="10"
+        />
+    <TextView
+        android:text="Longitude"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Type Longitude"
+        android:textColor="@color/colorPrimaryDark"
+        android:ems="10"
+        />
+
+    <DatePicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/datePicker4" />
+
 </RelativeLayout>

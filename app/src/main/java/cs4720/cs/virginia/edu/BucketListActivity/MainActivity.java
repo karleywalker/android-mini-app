@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         List<BucketItem> mdata = ThingList.getListData();
 
         //access the RecyclerView from the main activity
@@ -49,14 +50,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //THE PROBLEMTATIC LINE
-
         //generate floating action button
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "This button doesn't do anything yet", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Go to next page", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -68,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(intent));
             }
         });
+
+
     }
 
     @Override
