@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        //THE PROBLEMTATIC LINE
+
         //generate floating action button
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
