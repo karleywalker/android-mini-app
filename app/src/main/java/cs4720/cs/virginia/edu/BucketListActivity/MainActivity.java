@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -47,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager = new LinearLayoutManager(this);
         RecyclerView.setLayoutManager(LinearLayoutManager);
 
+        RecyclerView.addItemDecoration(
+                new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
 
         //generate floating action button
