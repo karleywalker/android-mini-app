@@ -29,3 +29,4 @@ Bucket List
 Look for the cutest pokemon icon
 
 ##Lessons learned (at least half a page)
+Setting up the models and getting them to relate to each other was difficult in the set up for reaching the milestone, but once they were established it became much easier to coordinate components. When working in xml files, the layout can be finicky. However, once we understood how the RecyclerView worked as well as the structures of RelativeLayout, Linear Layout, etc. we were able to get the necessary information in the right places at the right time.
