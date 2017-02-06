@@ -12,6 +12,15 @@
     android:focusable="true"
     android:focusableInTouchMode="true">
 
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+    </android.support.design.widget.AppBarLayout>
+
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -22,17 +31,28 @@
         android:clickable="true"
         app:fabSize="mini"
         app:srcCompat="@android:drawable/ic_menu_add"
+
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_marginRight="@dimen/fab_margin"
         android:layout_marginBottom="@dimen/fab_margin" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvContacts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentStart="true" />
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
+        android:layout_below="@+id/layout"
         android:layout_alignParentStart="true" />
 
+<<<<<<< HEAD
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvContacts"
         android:layout_width="match_parent"
@@ -43,6 +63,8 @@
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
         />
+=======
+>>>>>>> ecca18ea768b73075aca0304e62c5146f2380b00
 
 
 </RelativeLayout>
