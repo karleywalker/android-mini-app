@@ -13,7 +13,35 @@ public class BucketItem {
     private String description;
     private String latitude;
     private String longitude;
+    private int day;
+    private int month;
+    private int year;
 
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getMonth() {
+
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public int getDay() {
+
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
 
     public String getName() {
         return name;
@@ -52,6 +80,9 @@ public class BucketItem {
             "Just put your hand right on his hand!", "They're great bagels"};
     private static String[] lats = {"38.0889", "38.0881", "38.0887", "38.0992"};
     private static String[] longs = {"-78.5596", "-78.5593", "-78.5591", "-78.6650"};
+    private static int[] days = {22, 20, 5, 4};
+    private static int[] months = {5, 9, 5, 9};
+    private static int[] years = {2018, 2018, 2017, 2017};
 
     private boolean isSelected;
 
@@ -83,6 +114,9 @@ public class BucketItem {
             item.setDescription(descs[i]);
             item.setLongitude(longs[i]);
             item.setLatitude(lats[i]);
+            item.setDay(days[i]);
+            item.setMonth(months[i]);
+            item.setYear(years[i]);
             mdata.add(item);
         }
         return mdata;
