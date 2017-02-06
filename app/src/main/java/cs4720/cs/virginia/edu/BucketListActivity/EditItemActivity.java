@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -46,6 +47,8 @@ public class EditItemActivity extends AppCompatActivity{
         text = (EditText) findViewById(R.id.editText9);
         text.setText(item.getLatitude());
         text = (EditText) findViewById(R.id.editText10);
+        DatePicker picker = (DatePicker) findViewById(R.id.datePicker3);
+        picker.updateDate(item.getYear(), item.getMonth(), item.getDay());
         text.setText(item.getLongitude());
 
 
@@ -63,6 +66,10 @@ public class EditItemActivity extends AppCompatActivity{
                 mdata.get(y).setLatitude(edit.getText().toString());
                 edit = (EditText) findViewById(R.id.editText10);
                 mdata.get(y).setLongitude(edit.getText().toString());
+                DatePicker d = (DatePicker) findViewById(R.id.datePicker3);
+                mdata.get(y).setDay(d.getDayOfMonth());
+                mdata.get(y).setMonth(d.getMonth());
+                mdata.get(y).setYear(d.getYear());
                 BucketItem.setMdata(mdata);
                 Intent intent = new Intent(EditItemActivity.this, MainActivity.class);
                 startActivity(new Intent(intent));
