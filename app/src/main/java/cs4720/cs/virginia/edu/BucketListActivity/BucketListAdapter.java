@@ -7,6 +7,7 @@ package cs4720.cs.virginia.edu.BucketListActivity;
 import android.app.LauncherActivity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,8 +37,10 @@ public class BucketListAdapter extends RecyclerView.Adapter<BucketListAdapter.It
     @Override
     public void onBindViewHolder(ItemHolder holder, int position) {
         BucketItem item = listData.get(position);
-
         holder.name.setText(item.getName());
+        String mDate = (item.getMonth()+1) + "-" + item.getDay() + "-" + item.getYear();
+        holder.date.setText(mDate);
+
     }
 
 
@@ -61,6 +64,7 @@ public class BucketListAdapter extends RecyclerView.Adapter<BucketListAdapter.It
     public class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private TextView name;
+        private TextView date;
         private View container;
         private CheckBox checkDisBox;
 
@@ -69,6 +73,7 @@ public class BucketListAdapter extends RecyclerView.Adapter<BucketListAdapter.It
             super(itemView);
 
             name = (TextView)itemView.findViewById(R.id.item_data);
+            date = (TextView)itemView.findViewById(R.id.date);
             container = itemView.findViewById(R.id.container_item_root);
 
             checkDisBox = (CheckBox) itemView.findViewById(R.id.checkbox_item);
