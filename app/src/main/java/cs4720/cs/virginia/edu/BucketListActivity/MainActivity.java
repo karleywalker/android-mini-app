@@ -12,11 +12,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.CheckBox;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.security.cert.Certificate;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
