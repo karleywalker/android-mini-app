@@ -52,17 +52,6 @@
         android:layout_below="@+id/layout"
         android:layout_alignParentStart="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Bucket List"
-        android:textSize="30dp"
-        android:textColor="#fff"
-        android:ems="10"
-        android:id="@+id/personName"
-        android:layout_above="@+id/rvContacts"
-        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>
