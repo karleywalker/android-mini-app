@@ -8,6 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:isScrollContainer="false"
+    android:windowSoftInputMode="adjustNothing"
     android:labelFor="@string/app_name"
     tools:context="cs4720.cs.virginia.edu.testing.AddItemActivity">
 
@@ -89,12 +91,21 @@
         android:layout_alignParentEnd="true" />
 
     <DatePicker
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText10"
         android:layout_alignParentStart="true"
         android:id="@+id/datePicker3"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/button" />
 
 
 </RelativeLayout>
