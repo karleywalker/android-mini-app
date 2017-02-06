@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //generate a list of BucketItems
-        List<BucketItem> mdata = ThingList.getListData();
+        List<BucketItem> mdata = ThingList.getMdata();
 
         //access the RecyclerView from the main activity
         RecyclerView = (RecyclerView) findViewById(R.id.rvContacts);
@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         //Toast.makeText(this, "Sending message to " + num, Toast.LENGTH_LONG).show();
         Intent intent = new Intent(MainActivity.this, EditItemActivity.class);
         startActivity(new Intent(intent));
+
     }
 
 }
