@@ -124,10 +124,6 @@ public class BucketItem implements Comparable<BucketItem> {
     }
 
 
-<<<<<<< HEAD
-
-
-=======
     @Override
     public int compareTo(BucketItem cmp) { //return -1 if cmp is greater
         if (cmp.getYear() > this.getYear()) {
@@ -147,5 +143,5 @@ public class BucketItem implements Comparable<BucketItem> {
         }
 
     }
->>>>>>> 7c43986ada9661d44374d200f45e76a799dc71a7
+
 }
