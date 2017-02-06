@@ -14,11 +14,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
-<<<<<<< HEAD
-=======
 import java.security.cert.Certificate;
 import java.util.Collections;
->>>>>>> 7c43986ada9661d44374d200f45e76a799dc71a7
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {

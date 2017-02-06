@@ -4,7 +4,6 @@ package cs4720.cs.virginia.edu.BucketListActivity;
  * The adapter class that handles how a BucketItem appears in the RecyclerView
  */
 
-import android.app.LauncherActivity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,13 +71,13 @@ public class BucketListAdapter extends RecyclerView.Adapter<BucketListAdapter.It
 
             checkDisBox = (CheckBox) itemView.findViewById(R.id.checkbox_item);
             checkDisBox.setOnClickListener(this);
+            checkDisBox.setEnabled(true);
         }
 
         public void onClick(View v) {
+            delete(getAdapterPosition()); //calls the method above to delete
             checkDisBox.setEnabled(false);
             checkDisBox.setChecked(true);
-            delete(getAdapterPosition()); //calls the method above to delete
-
         }
     }
 
