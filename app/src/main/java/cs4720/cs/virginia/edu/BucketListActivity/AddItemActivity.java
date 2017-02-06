@@ -32,7 +32,7 @@ public class AddItemActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //edit in the list of BucketItem
-                List<BucketItem> mdata = ThingList.getMdata();
+                List<BucketItem> mdata = BucketItem.getMdata();
                 BucketItem b = new BucketItem();
 
                 EditText edit = (EditText) findViewById(R.id.editText7);
@@ -45,7 +45,7 @@ public class AddItemActivity extends AppCompatActivity {
                 b.setLongitude(edit.getText().toString());
 
                 mdata.add(b);
-                ThingList.setMdata(mdata);
+                BucketItem.setMdata(mdata);
                 Intent intent = new Intent(AddItemActivity.this, MainActivity.class);
                 startActivity(new Intent(intent));
             }

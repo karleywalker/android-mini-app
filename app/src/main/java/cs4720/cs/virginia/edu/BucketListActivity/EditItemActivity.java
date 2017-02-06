@@ -29,7 +29,7 @@ public class EditItemActivity extends AppCompatActivity{
         }
 
         String clickname = MainActivity.getclickname();
-        List<BucketItem> mdata = ThingList.getMdata();
+        List<BucketItem> mdata = BucketItem.getMdata();
         int x = 0;
         for(int i = 0; i < mdata.size(); i++){
             if(mdata.get(i).getName() == clickname){
@@ -54,7 +54,7 @@ public class EditItemActivity extends AppCompatActivity{
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //edit in the list of BucketItem
-                List<BucketItem> mdata = ThingList.getMdata();
+                List<BucketItem> mdata = BucketItem.getMdata();
                 EditText edit = (EditText) findViewById(R.id.editText7);
                 mdata.get(y).setName(edit.getText().toString());
                 edit = (EditText) findViewById(R.id.editText8);
@@ -63,7 +63,7 @@ public class EditItemActivity extends AppCompatActivity{
                 mdata.get(y).setLatitude(edit.getText().toString());
                 edit = (EditText) findViewById(R.id.editText10);
                 mdata.get(y).setLongitude(edit.getText().toString());
-                ThingList.setMdata(mdata);
+                BucketItem.setMdata(mdata);
                 Intent intent = new Intent(EditItemActivity.this, MainActivity.class);
                 startActivity(new Intent(intent));
             }

@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //generate a list of BucketItems
-        List<BucketItem> mdata = ThingList.getMdata();
+        List<BucketItem> mdata = BucketItem.getMdata();
 
         //access the RecyclerView from the main activity
         RecyclerView = (RecyclerView) findViewById(R.id.rvContacts);

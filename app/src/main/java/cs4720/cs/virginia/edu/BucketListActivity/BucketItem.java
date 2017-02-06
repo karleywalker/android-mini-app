@@ -1,5 +1,8 @@
 package cs4720.cs.virginia.edu.BucketListActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * The model representing a single bucket list item
  */
@@ -10,7 +13,7 @@ public class BucketItem {
     private String description;
     private String latitude;
     private String longitude;
-    
+
 
     public String getName() {
         return name;
@@ -42,6 +45,47 @@ public class BucketItem {
 
     public void setLongitude(String longitude) {
         this.longitude = longitude;
+    }
+
+    private static String[] names = {"Streak the Lawn", "Lighting of the Lawn", "High-Five Dean Groves", "Eat at Bodos Bagels"};
+    private static String[] descs = {"Go run around the homer statue and come back.", "Have a great time and see some lights",
+            "Just put your hand right on his hand!", "They're great bagels"};
+    private static String[] lats = {"38.0889", "38.0881", "38.0887", "38.0992"};
+    private static String[] longs = {"-78.5596", "-78.5593", "-78.5591", "-78.6650"};
+
+    private boolean isSelected;
+
+
+    public static List<BucketItem> getMdata() {
+        return mdata;
+    }
+
+    public static void setMdata(List<BucketItem> mdata) {
+        BucketItem.mdata = mdata;
+    }
+
+    private static List<BucketItem> mdata = createInitialBucketList();
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean isSelected) {
+        this.isSelected = isSelected;
+    }
+
+    public static List<BucketItem> createInitialBucketList() {
+        List<BucketItem> mdata = new ArrayList<>();
+
+        for(int i = 0; i < 4; i++) {
+            BucketItem item = new BucketItem();
+            item.setName(names[i]);
+            item.setDescription(descs[i]);
+            item.setLongitude(longs[i]);
+            item.setLatitude(lats[i]);
+            mdata.add(item);
+        }
+        return mdata;
     }
 
 
