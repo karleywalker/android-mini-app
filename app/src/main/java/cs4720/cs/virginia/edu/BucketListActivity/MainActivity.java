@@ -49,14 +49,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //THE PROBLEMTATIC LINE
-
         //generate floating action button
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "This button doesn't do anything yet", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Go to next page", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -68,6 +66,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(intent));
             }
         });
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Rotation stuff?
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        // Also rotation stuff? It won't crash? Hooray?
+        super.onRestoreInstanceState(savedInstanceState);
+
     }
 
     @Override
