@@ -7,7 +7,7 @@ import java.util.List;
  * The model representing a single bucket list item
  */
 
-public class BucketItem {
+public class BucketItem implements Comparable<BucketItem> {
 
     private String name;
     private String description;
@@ -17,24 +17,6 @@ public class BucketItem {
     private int month;
     private int year;
 
-    public int compareTo(BucketItem cmp){ //return -1 if cmp is greater
-        if(cmp.getYear() > this.getYear()){
-            return -1;
-        } else if (cmp.getYear() < this.getYear()){
-            return 1;
-        } else if (cmp.getMonth() > this.getMonth()){
-            return -1;
-        } else if (cmp.getMonth() < this.getMonth()){
-            return 1;
-        } else if (cmp.getDay() < this.getDay()){
-            return -1;
-        } else if (cmp.getDay() > this.getDay()){
-            return 1;
-        } else {
-            return 0;
-        }
-
-    }
 
     public int getYear() {
         return year;
@@ -127,7 +109,7 @@ public class BucketItem {
     public static List<BucketItem> createInitialBucketList() {
         List<BucketItem> mdata = new ArrayList<>();
 
-        for(int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++) {
             BucketItem item = new BucketItem();
             item.setName(names[i]);
             item.setDescription(descs[i]);
@@ -142,4 +124,23 @@ public class BucketItem {
     }
 
 
+    @Override
+    public int compareTo(BucketItem cmp) { //return -1 if cmp is greater
+        if (cmp.getYear() > this.getYear()) {
+            return -1;
+        } else if (cmp.getYear() < this.getYear()) {
+            return 1;
+        } else if (cmp.getMonth() > this.getMonth()) {
+            return -1;
+        } else if (cmp.getMonth() < this.getMonth()) {
+            return 1;
+        } else if (cmp.getDay() < this.getDay()) {
+            return -1;
+        } else if (cmp.getDay() > this.getDay()) {
+            return 1;
+        } else {
+            return 0;
+        }
+
+    }
 }

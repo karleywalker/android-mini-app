@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.security.cert.Certificate;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         //generate a list of BucketItems
         List<BucketItem> mdata = BucketItem.getMdata();
+        Collections.sort(mdata);
 
         //access the RecyclerView from the main activity
         RecyclerView = (RecyclerView) findViewById(R.id.rvContacts);
