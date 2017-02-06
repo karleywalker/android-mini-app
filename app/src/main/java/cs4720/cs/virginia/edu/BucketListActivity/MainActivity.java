@@ -16,6 +16,10 @@ import android.widget.TextView;
 
 import java.security.cert.Certificate;
 import java.util.Collections;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 373171ab9b9528ec4581975e5f9bde9f6cc73bd6
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
