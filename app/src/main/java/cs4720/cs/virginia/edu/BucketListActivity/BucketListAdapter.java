@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -43,6 +44,7 @@ public class BucketListAdapter extends RecyclerView.Adapter<BucketListAdapter.It
     public int getItemCount() {
         return listData.size();
     }
+
 
     class ItemHolder extends RecyclerView.ViewHolder{
 

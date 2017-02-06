@@ -54,10 +54,11 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "This button doesn't do anything yet", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Go to next page", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +67,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(intent));
             }
         });
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Rotation stuff?
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        // Also rotation stuff? It won't crash? Hooray?
+        super.onRestoreInstanceState(savedInstanceState);
+
     }
 
     @Override
@@ -91,5 +104,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void openItem(View view){
+        Intent intent = new Intent(MainActivity.this, EditItemActivity.class);
+        startActivity(new Intent(intent));
+    }
 
 }
