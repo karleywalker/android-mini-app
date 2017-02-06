@@ -26,5 +26,6 @@ Bucket List
   * Click "Save" to add new item to bucket list
 
 ##Any special info we need to run the app
+Look for the cutest pokemon icon
 
 ##Lessons learned (at least half a page)
