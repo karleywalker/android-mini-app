@@ -11,6 +11,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -70,6 +71,7 @@ public class EditItemActivity extends AppCompatActivity{
                 mdata.get(y).setDay(d.getDayOfMonth());
                 mdata.get(y).setMonth(d.getMonth());
                 mdata.get(y).setYear(d.getYear());
+                Collections.sort(mdata);
                 BucketItem.setMdata(mdata);
                 Intent intent = new Intent(EditItemActivity.this, MainActivity.class);
                 startActivity(new Intent(intent));

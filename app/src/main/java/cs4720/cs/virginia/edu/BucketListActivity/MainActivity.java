@@ -14,6 +14,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
+<<<<<<< HEAD
+=======
+import java.security.cert.Certificate;
+import java.util.Collections;
+>>>>>>> 7c43986ada9661d44374d200f45e76a799dc71a7
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         //generate a list of BucketItems
         List<BucketItem> mdata = BucketItem.getMdata();
+        Collections.sort(mdata);
 
         //access the RecyclerView from the main activity
         RecyclerView = (RecyclerView) findViewById(R.id.rvContacts);
@@ -116,6 +122,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, EditItemActivity.class);
         startActivity(new Intent(intent));
 
+    }
+
+    public void itemClicked(View view){
+        //clicked on checkbox
     }
 
 }
