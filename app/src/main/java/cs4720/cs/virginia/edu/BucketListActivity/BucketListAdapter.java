@@ -14,16 +14,17 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BucketListAdapter extends RecyclerView.Adapter<BucketListAdapter.ItemHolder> {
 
-    private List<BucketItem> listData;
+    private ArrayList<BucketItem> listData;
     private LayoutInflater inflater;
 
     public BucketListAdapter (List<BucketItem> listData, Context c){
         this.inflater = LayoutInflater.from(c);
-        this.listData = listData;
+        this.listData = (ArrayList<BucketItem>) listData;
     }
 
     @Override
@@ -45,8 +46,14 @@ public class BucketListAdapter extends RecyclerView.Adapter<BucketListAdapter.It
     }
 
     public void delete(int position) { //removes the row
+        BucketItem duplicate = listData.get(position);
         listData.remove(position);
         notifyItemRemoved(position);
+        addToEnd(duplicate);
+    }
+
+    public void addToEnd(BucketItem duplicate) { //removes the row
+        listData.add(duplicate);
     }
 
 
@@ -61,7 +68,6 @@ public class BucketListAdapter extends RecyclerView.Adapter<BucketListAdapter.It
 
             name = (TextView)itemView.findViewById(R.id.item_data);
             container = itemView.findViewById(R.id.container_item_root);
-
 
             checkDisBox = (CheckBox) itemView.findViewById(R.id.checkbox_item);
             checkDisBox.setOnClickListener(this);
