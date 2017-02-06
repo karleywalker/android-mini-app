@@ -10,71 +10,94 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="cs4720.cs.virginia.edu.testing.AddItemActivity">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30px" />
 
     <TextView
-        android:text="Name"
-        android:textColor="@color/colorPrimary"
-        android:layout_width="match_parent"
+        android:text="Title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
+        android:layout_alignParentTop="true"
+        android:id="@+id/textView5"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Type Name of Event"
-        android:textColor="@color/colorPrimaryDark"
+        android:text="Title"
         android:ems="10"
-        />
+        android:layout_below="@+id/textView5"
+        android:id="@+id/editText7"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
+
     <TextView
         android:text="Description"
-        android:textColor="@color/colorPrimary"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
+        android:id="@+id/textView7"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/editText7"
+        android:layout_alignParentStart="true" />
+
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Type Description"
-        android:textColor="@color/colorPrimaryDark"
+        android:text="Description"
         android:ems="10"
-        />
+        android:layout_below="@+id/textView7"
+        android:layout_alignStart="@+id/textView7"
+        android:id="@+id/editText8"
+        android:layout_alignParentEnd="true" />
+
     <TextView
         android:text="Latitude"
-        android:textColor="@color/colorPrimary"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
+        android:layout_below="@+id/editText8"
+        android:layout_alignStart="@+id/editText8"
+        android:id="@+id/textView8"
+        android:layout_alignParentEnd="true" />
+
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Type Latitude"
-        android:textColor="@color/colorPrimaryDark"
+        android:text="Latitude"
         android:ems="10"
-        />
+        android:layout_below="@+id/textView8"
+        android:layout_alignStart="@+id/textView8"
+        android:id="@+id/editText9"
+        android:layout_alignParentEnd="true" />
+
     <TextView
         android:text="Longitude"
-        android:textColor="@color/colorPrimary"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
+        android:layout_below="@+id/editText9"
+        android:layout_alignStart="@+id/editText9"
+        android:id="@+id/textView9"
+        android:layout_alignParentEnd="true" />
+
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Type Longitude"
-        android:textColor="@color/colorPrimaryDark"
+        android:text="Longitude"
         android:ems="10"
-        />
+        android:layout_below="@+id/textView9"
+        android:layout_alignStart="@+id/textView9"
+        android:id="@+id/editText10"
+        android:layout_alignParentEnd="true" />
 
     <DatePicker
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/datePicker4" />
+        android:layout_below="@+id/editText10"
+        android:layout_alignParentStart="true"
+        android:id="@+id/datePicker3"
+        android:layout_alignParentEnd="true" />
+
 
 </RelativeLayout>
