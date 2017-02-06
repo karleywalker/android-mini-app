@@ -16,6 +16,9 @@ public class ThingList {
     private static String[] lats = {"38.0889", "38.0881", "38.0887", "38.0992"};
     private static String[] longs = {"-78.5596", "-78.5593", "-78.5591", "-78.6650"};
 
+    private boolean isSelected;
+
+
     public static List<BucketItem> getMdata() {
         return mdata;
     }
@@ -26,7 +29,13 @@ public class ThingList {
 
     private static List<BucketItem> mdata = makeListData();
 
+    public boolean isSelected() {
+        return isSelected;
+    }
 
+    public void setSelected(boolean isSelected) {
+        this.isSelected = isSelected;
+    }
 
     public static List<BucketItem> makeListData(){
         List<BucketItem> mdata = new ArrayList<>();
