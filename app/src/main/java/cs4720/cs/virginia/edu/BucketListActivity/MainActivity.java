@@ -123,4 +123,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void itemClicked(View view){
+        //clicked on checkbox
+    }
+
 }
