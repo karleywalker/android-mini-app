@@ -17,6 +17,25 @@ public class BucketItem {
     private int month;
     private int year;
 
+    public int compareTo(BucketItem cmp){ //return -1 if cmp is greater
+        if(cmp.getYear() > this.getYear()){
+            return -1;
+        } else if (cmp.getYear() < this.getYear()){
+            return 1;
+        } else if (cmp.getMonth() > this.getMonth()){
+            return -1;
+        } else if (cmp.getMonth() < this.getMonth()){
+            return 1;
+        } else if (cmp.getDay() < this.getDay()){
+            return -1;
+        } else if (cmp.getDay() > this.getDay()){
+            return 1;
+        } else {
+            return 0;
+        }
+
+    }
+
     public int getYear() {
         return year;
     }
