@@ -11,7 +11,7 @@
     android:isScrollContainer="false"
     android:windowSoftInputMode="adjustNothing"
     android:labelFor="@string/app_name"
-    tools:context="cs4720.cs.virginia.edu.testing.AddItemActivity">
+    tools:context=".AddItemActivity">
 
 
     <TextView

@@ -10,6 +10,7 @@ public class BucketItem {
     private String description;
     private String latitude;
     private String longitude;
+    
 
     public String getName() {
         return name;

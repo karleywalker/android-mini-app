@@ -1,10 +1,9 @@
-package cs4720.cs.virginia.edu.testing;
+package cs4720.cs.virginia.edu.BucketListActivity;
 
 /**
  * An Activity that lets a user add an item to the list
  */
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,12 +14,6 @@ import android.widget.EditText;
 
 
 import java.util.List;
-
-import cs4720.cs.virginia.edu.BucketListActivity.BucketItem;
-import cs4720.cs.virginia.edu.BucketListActivity.EditItemActivity;
-import cs4720.cs.virginia.edu.BucketListActivity.MainActivity;
-import cs4720.cs.virginia.edu.BucketListActivity.R;
-import cs4720.cs.virginia.edu.BucketListActivity.ThingList;
 
 public class AddItemActivity extends AppCompatActivity {
 

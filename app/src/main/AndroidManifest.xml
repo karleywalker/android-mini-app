@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="cs4720.cs.virginia.edu.testing.AddItemActivity"
+            android:name=".AddItemActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustNothing"
             />
