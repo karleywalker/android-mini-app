@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:paddingLeft="8dp"
-        android:text="Words in textView in recylerView"/>
+        android:onClick="openItem"/>
 
 
 </LinearLayout>

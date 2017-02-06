@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,5 +104,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void openItem(View view){
+        Intent intent = new Intent(MainActivity.this, EditItemActivity.class);
+        startActivity(new Intent(intent));
+    }
 
 }
