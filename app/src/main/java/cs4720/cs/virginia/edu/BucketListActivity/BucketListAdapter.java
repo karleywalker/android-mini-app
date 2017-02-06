@@ -40,6 +40,7 @@ public class BucketListAdapter extends RecyclerView.Adapter<BucketListAdapter.It
         holder.name.setText(item.getName());
     }
 
+
     @Override
     public int getItemCount() {
         return listData.size();
@@ -61,7 +62,8 @@ public class BucketListAdapter extends RecyclerView.Adapter<BucketListAdapter.It
 
         private TextView name;
         private View container;
-        CheckBox checkDisBox;
+        private CheckBox checkDisBox;
+
 
         public ItemHolder(View itemView) {
             super(itemView);
@@ -74,7 +76,10 @@ public class BucketListAdapter extends RecyclerView.Adapter<BucketListAdapter.It
         }
 
         public void onClick(View v) {
+            checkDisBox.setEnabled(false);
+            checkDisBox.setChecked(true);
             delete(getAdapterPosition()); //calls the method above to delete
+
         }
     }
 
