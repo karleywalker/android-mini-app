@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        //generate a list of BucketItems
         List<BucketItem> mdata = ThingList.getListData();
 
         //access the RecyclerView from the main activity
@@ -107,7 +107,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private static String clickname;
+
+    public static String getclickname() {
+        return clickname;
+    }
+
+    public void setclickname(String clickname){
+        this.clickname = clickname;
+    }
+
     public void openItem(View view){
+        TextView currentItem = (TextView)view;
+        setclickname(currentItem.getText().toString());
+        //Log.d("ListExample", "sendMessage to " + currentItem.getText().toString());
+        //Toast.makeText(this, "Sending message to " + num, Toast.LENGTH_LONG).show();
         Intent intent = new Intent(MainActivity.this, EditItemActivity.class);
         startActivity(new Intent(intent));
     }
