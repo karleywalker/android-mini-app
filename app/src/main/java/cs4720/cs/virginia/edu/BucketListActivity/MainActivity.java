@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                     String laValue = data.getStringExtra("lat_key");
                     String loValue = data.getStringExtra("lon_key");
                     int dyValue = Integer.parseInt(data.getStringExtra("day_key"));
-                    int moValue = Integer.parseInt(data.getStringExtra("mo_key")) + 1;
+                    int month_value = Integer.parseInt(data.getStringExtra("mo_key"));
                     int yrValue = Integer.parseInt(data.getStringExtra("yr_key"));
                     BucketItem item = new BucketItem();
 
@@ -92,16 +92,16 @@ public class MainActivity extends AppCompatActivity {
                     item.setLatitude(laValue);
                     item.setLongitude(loValue);
                     item.setDay(dyValue);
-                    item.setMonth(11); //how to get the month set correctly?????
+                    item.setMonth(month_value);
                     item.setYear(yrValue);
                     mdata.add(item);
                     Collections.sort(mdata);
+                    //refresh
                     BucketListAdapter mAdapter = new BucketListAdapter(mdata, this);
                     RecyclerView.setAdapter(mAdapter);
 
-
                 } else {
-
+                    //you hit the back arrow
                 }
                 break;
             }
