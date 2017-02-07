@@ -1,5 +1,6 @@
 package cs4720.cs.virginia.edu.BucketListActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.security.cert.Certificate;
 import java.util.Collections;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private LinearLayoutManager LinearLayoutManager;
 
+    List<BucketItem> mdata = BucketItem.getMdata();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //generate a list of BucketItems
-        List<BucketItem> mdata = BucketItem.getMdata();
+
         Collections.sort(mdata);
 
         //access the RecyclerView from the main activity
@@ -61,11 +64,34 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddItemActivity.class);
-                startActivity(new Intent(intent));
+                Intent i = new Intent(MainActivity.this, AddItemActivity.class);
+                startActivityForResult(i, 1);
             }
         });
     }
+
+    @Override
+        protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+                        if (requestCode == 1) {
+                        if(resultCode == Activity.RESULT_OK){
+                            Toast.makeText(getApplicationContext(), "BOOM SHAKA LAKA!",Toast.LENGTH_SHORT).show();
+                            Bundle b = this.getIntent().getExtras();
+                            //get from b, strings
+                            BucketItem item = new BucketItem();
+                            item.setName("tmp");
+                            item.setDescription("tmp");
+                            item.setLatitude("tmp");
+                            item.setLongitude("tmp");
+                            mdata.add(item);
+
+                        }
+                        if (resultCode == Activity.RESULT_CANCELED) {
+                                //Write your code if there's no result
+                                        Toast.makeText(getApplicationContext(), "CANCELLED!",Toast.LENGTH_SHORT).show();
+                            }
+                    }
+            }//onActivityResult
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
