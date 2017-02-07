@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         switch(requestCode) {
             case (1) : {
                 if (resultCode == Activity.RESULT_OK) {
-                    
+
                     String returnValue = data.getStringExtra("title_key");
                     String dValue = data.getStringExtra("desc_key");
                     String laValue = data.getStringExtra("lat_key");
@@ -97,44 +97,17 @@ public class MainActivity extends AppCompatActivity {
                     mdata.add(item);
                     Collections.sort(mdata);
 
+
+
                 } else {
 
                 }
                 break;
             }
         }
+        //how do i refresh???
     }
-    /**
-    @Override
-        protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-                        if (requestCode == 1) {
-                        if(resultCode == Activity.RESULT_OK){
-
-                            Intent intent = getIntent();
-
-                            Bundle bundle = intent.getExtras();
-                            BucketItem item = new BucketItem();
-                            //how do i get the strings from the array in the bundle????
-                            item.setName(bundle.getString(""));
-                            item.setDescription("desc");
-                            item.setLatitude("101");
-                            item.setLongitude("42");
-                            item.setDay(21);
-                            item.setMonth(11);
-                            item.setYear(2018);
-                            mdata.add(item);
-                            Collections.sort(mdata);
-
-                            //how do i refresh?????
-
-                        }
-                        if (resultCode == Activity.RESULT_CANCELED) {
-                                //Write your code if there's no result
-                                        Toast.makeText(getApplicationContext(), "CANCELLED!",Toast.LENGTH_SHORT).show();
-                            }
-                    }
-            }//onActivityResult **/
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
