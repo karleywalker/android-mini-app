@@ -96,7 +96,8 @@ public class MainActivity extends AppCompatActivity {
                     item.setYear(yrValue);
                     mdata.add(item);
                     Collections.sort(mdata);
-
+                    BucketListAdapter mAdapter = new BucketListAdapter(mdata, this);
+                    RecyclerView.setAdapter(mAdapter);
 
 
                 } else {
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
         }
-        //how do i refresh???
+
     }
 
 
