@@ -77,22 +77,22 @@ public class MainActivity extends AppCompatActivity {
         switch(requestCode) {
             case (1) : {
                 if (resultCode == Activity.RESULT_OK) {
-                    // TODO Extract the data returned from the child Activity.
+                    
                     String returnValue = data.getStringExtra("title_key");
                     String dValue = data.getStringExtra("desc_key");
                     String laValue = data.getStringExtra("lat_key");
                     String loValue = data.getStringExtra("lon_key");
                     int dyValue = Integer.parseInt(data.getStringExtra("day_key"));
-                    int moValue = Integer.parseInt(data.getStringExtra("mo_key"));
+                    int moValue = Integer.parseInt(data.getStringExtra("mo_key")) + 1;
                     int yrValue = Integer.parseInt(data.getStringExtra("yr_key"));
                     BucketItem item = new BucketItem();
-                    //how do i get the strings from the array in the bundle????
+
                     item.setName(returnValue);
                     item.setDescription(dValue);
                     item.setLatitude(laValue);
                     item.setLongitude(loValue);
                     item.setDay(dyValue);
-                    item.setMonth(11);
+                    item.setMonth(11); //how to get the month set correctly?????
                     item.setYear(yrValue);
                     mdata.add(item);
                     Collections.sort(mdata);
