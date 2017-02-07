@@ -72,16 +72,51 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch(requestCode) {
+            case (1) : {
+                if (resultCode == Activity.RESULT_OK) {
+                    // TODO Extract the data returned from the child Activity.
+                    String returnValue = data.getStringExtra("title_key");
+                    String dValue = data.getStringExtra("desc_key");
+                    String laValue = data.getStringExtra("lat_key");
+                    String loValue = data.getStringExtra("lon_key");
+                    int dyValue = Integer.parseInt(data.getStringExtra("day_key"));
+                    int moValue = Integer.parseInt(data.getStringExtra("mo_key"));
+                    int yrValue = Integer.parseInt(data.getStringExtra("yr_key"));
+                    BucketItem item = new BucketItem();
+                    //how do i get the strings from the array in the bundle????
+                    item.setName(returnValue);
+                    item.setDescription(dValue);
+                    item.setLatitude(laValue);
+                    item.setLongitude(loValue);
+                    item.setDay(dyValue);
+                    item.setMonth(11);
+                    item.setYear(yrValue);
+                    mdata.add(item);
+                    Collections.sort(mdata);
+
+                } else {
+
+                }
+                break;
+            }
+        }
+    }
+    /**
+    @Override
         protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
                         if (requestCode == 1) {
                         if(resultCode == Activity.RESULT_OK){
-                            Toast.makeText(getApplicationContext(), "BOOM SHAKA LAKA!",Toast.LENGTH_SHORT).show();
-                            Bundle b = this.getIntent().getExtras();
-                            //get from b, strings
+
+                            Intent intent = getIntent();
+
+                            Bundle bundle = intent.getExtras();
                             BucketItem item = new BucketItem();
                             //how do i get the strings from the array in the bundle????
-                            item.setName("name");
+                            item.setName(bundle.getString(""));
                             item.setDescription("desc");
                             item.setLatitude("101");
                             item.setLongitude("42");
@@ -99,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), "CANCELLED!",Toast.LENGTH_SHORT).show();
                             }
                     }
-            }//onActivityResult
+            }//onActivityResult **/
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
