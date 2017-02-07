@@ -28,7 +28,6 @@
             android:textSize="18sp"
             android:onClick="openItem"
             android:textColor="#f6f5f7"
-            android:typeface="monospace"
             android:textStyle="bold"
             />
 
