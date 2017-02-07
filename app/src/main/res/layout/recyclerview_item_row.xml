@@ -2,34 +2,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="56dp"
-    android:paddingLeft="16dp"
     android:id="@+id/container_item_root">
 
     <LinearLayout
         android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#be040008"
         android:orientation="horizontal">
+
         <CheckBox
             android:id="@+id/checkbox_item"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:onClick="itemClicked"
             android:checked="false"/>
 
         <TextView
             android:id="@+id/item_data"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="fill_parent"
             android:layout_gravity="start"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="12dp"
+            android:padding="10dp"
+            android:textSize="18sp"
             android:onClick="openItem"
-            android:textStyle="bold"/>
+            android:textColor="#f6f5f7"
+            android:typeface="monospace"
+            android:textStyle="bold"
+            />
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:textSize="15sp"
+            android:layout_height="fill_parent"
             android:gravity="end"
+            android:textColor="#cfa4f7"
             android:id="@+id/date"
             android:layout_weight="1"
             />
