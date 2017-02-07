@@ -52,6 +52,7 @@ public class AddItemActivity extends AppCompatActivity {
                 BucketItem.setMdata(mdata);
                 Intent intent = new Intent(AddItemActivity.this, MainActivity.class);
                 startActivity(new Intent(intent));
+                //finish();
             }
         });
 
