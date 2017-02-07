@@ -4,9 +4,11 @@ package cs4720.cs.virginia.edu.BucketListActivity;
  * An Activity that lets a user add an item to the list
  */
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -32,26 +34,23 @@ public class AddItemActivity extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //edit in the list of BucketItem
-                List<BucketItem> mdata = BucketItem.getMdata();
-                BucketItem b = new BucketItem();
 
+                Intent i = new Intent();
                 EditText edit = (EditText) findViewById(R.id.editText7);
-                b.setName(edit.getText().toString());
+                i.putExtra("title_key", edit.getText().toString());
                 edit = (EditText) findViewById(R.id.editText8);
-                b.setDescription(edit.getText().toString());
+                i.putExtra("desc_key", edit.getText().toString());
                 edit = (EditText) findViewById(R.id.editText9);
-                b.setLatitude(edit.getText().toString());
+                i.putExtra("lat_key", edit.getText().toString());
                 edit = (EditText) findViewById(R.id.editText10);
-                b.setLongitude(edit.getText().toString());
-                DatePicker d = (DatePicker) findViewById(R.id.datePicker3);
-                b.setMonth(d.getMonth());
-                b.setDay(d.getDayOfMonth());
-                b.setYear(d.getYear());
-                mdata.add(b);
-                BucketItem.setMdata(mdata);
-                Intent intent = new Intent(AddItemActivity.this, MainActivity.class);
-                startActivity(new Intent(intent));
+                i.putExtra("lon_key", edit.getText().toString());
+                DatePicker dp = (DatePicker) findViewById(R.id.datePicker3);
+                i.putExtra("day_key", String.valueOf(dp.getDayOfMonth()));
+                i.putExtra("mo_key", String.valueOf(dp.getMonth()));
+                i.putExtra("yr_key", String.valueOf(dp.getYear()));
+                setResult(Activity.RESULT_OK, i);
+                finish();
+
             }
         });
 
@@ -60,6 +59,8 @@ public class AddItemActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         if(item.getItemId() == android.R.id.home){
+            Intent returnIntent = new Intent();
+            setResult(Activity.RESULT_CANCELED, returnIntent);
             finish();
         }
         return super.onOptionsItemSelected(item);
