@@ -33,9 +33,7 @@ public class AddItemActivity extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //edit in the list of BucketItem
-                List<BucketItem> mdata = BucketItem.getMdata();
-                String[] b = new String[4];
+                String[] b = new String[7];
 
                 EditText edit = (EditText) findViewById(R.id.editText7);
                 b[0] = edit.getText().toString();
@@ -45,7 +43,10 @@ public class AddItemActivity extends AppCompatActivity {
                 b[2] = edit.getText().toString();
                 edit = (EditText) findViewById(R.id.editText10);
                 b[3] = edit.getText().toString();
-
+                DatePicker d = (DatePicker) findViewById(R.id.datePicker3);
+                b[4] = "" + d.getMonth();
+                b[5] = "" + d.getDayOfMonth();
+                b[6] = "" + d.getYear();
 
                 Intent i = new Intent(AddItemActivity.this,MainActivity.class);
                 Bundle bb = new Bundle();

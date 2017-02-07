@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -79,11 +80,18 @@ public class MainActivity extends AppCompatActivity {
                             Bundle b = this.getIntent().getExtras();
                             //get from b, strings
                             BucketItem item = new BucketItem();
-                            item.setName("tmp");
-                            item.setDescription("tmp");
-                            item.setLatitude("tmp");
-                            item.setLongitude("tmp");
+                            //how do i get the strings from the array in the bundle????
+                            item.setName("name");
+                            item.setDescription("desc");
+                            item.setLatitude("101");
+                            item.setLongitude("42");
+                            item.setDay(21);
+                            item.setMonth(11);
+                            item.setYear(2018);
                             mdata.add(item);
+                            Collections.sort(mdata);
+
+                            //how do i refresh?????
 
                         }
                         if (resultCode == Activity.RESULT_CANCELED) {
