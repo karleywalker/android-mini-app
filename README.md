@@ -3,7 +3,8 @@ android-mini-app-s17-dewgong created by GitHub Classroom
 
 
 ##Team member list
-Karley Walker and Hanna Dickerson
+- Hanna Dickerson [hcd2ha]
+- Karley Walker [kbw2as]
 
 ##Device Name
 Dewgong
