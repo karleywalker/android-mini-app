@@ -36,7 +36,6 @@ public class AddItemActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent i = new Intent();
-                // TODO Add extras or a data URI to this intent as appropriate.
                 EditText edit = (EditText) findViewById(R.id.editText7);
                 i.putExtra("title_key", edit.getText().toString());
                 edit = (EditText) findViewById(R.id.editText8);
@@ -51,26 +50,7 @@ public class AddItemActivity extends AppCompatActivity {
                 i.putExtra("yr_key", String.valueOf(dp.getYear()));
                 setResult(Activity.RESULT_OK, i);
                 finish();
-               /** Intent intent = new Intent(AddItemActivity.this, MainActivity.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("title", b[0]);
-                    bundle.putString("desc", b[1]);
-                    bundle.putString("lat", b[2]);
-                    bundle.putString("lon", b[3]);
-                    bundle.putString("mon", b[4]);
-                    bundle.putString("day", b[5]);
-                    bundle.putString("yr", b[6]);
-                intent.putExtras(bundle);
-                setResult(Activity.RESULT_OK, intent);   //set the result and intent
-                finish();   //finish and return to main activity **/
 
-                /**
-                Intent i = new Intent(AddItemActivity.this,MainActivity.class);
-                Bundle bb = new Bundle(); // bundle bb
-                bb.putStringArray("name", arr); // add string[] arr to bundle
-                i.putExtras(bb);    // add the bundle to the intent
-                setResult(Activity.RESULT_OK, i);   //set the result and intent
-                finish();   //finish and return to main activity **/
             }
         });
 
