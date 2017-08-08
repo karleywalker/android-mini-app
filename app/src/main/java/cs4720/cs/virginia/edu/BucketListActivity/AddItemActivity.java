@@ -34,7 +34,6 @@ public class AddItemActivity extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
                 Intent i = new Intent();
                 EditText edit = (EditText) findViewById(R.id.editText7);
                 i.putExtra("title_key", edit.getText().toString());
@@ -49,11 +48,9 @@ public class AddItemActivity extends AppCompatActivity {
                 i.putExtra("mo_key", String.valueOf(dp.getMonth()));
                 i.putExtra("yr_key", String.valueOf(dp.getYear()));
                 setResult(Activity.RESULT_OK, i);
-                finish();
-
+                finishAfterTransition();
             }
         });
-
     }
 
     @Override
